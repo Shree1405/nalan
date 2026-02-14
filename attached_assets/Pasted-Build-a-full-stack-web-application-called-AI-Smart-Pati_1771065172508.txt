@@ -1,0 +1,204 @@
+Build a full-stack web application called “AI Smart Patient Triage System” for a healthcare hackathon prototype.
+
+The application must use AI to classify patient risk levels and recommend medical departments based on symptoms and medical history.
+
+🔹 Core Features
+1️⃣ Patient Input Module
+
+Create a clean modern medical-themed UI that collects:
+
+Age (number input)
+
+Gender (dropdown)
+
+Symptoms (multi-select dropdown)
+
+Blood Pressure (Systolic / Diastolic)
+
+Heart Rate
+
+Temperature
+
+Pre-existing Conditions (multi-select)
+
+Upload EHR/EMR file (PDF or CSV)
+
+When file is uploaded:
+
+Extract relevant text
+
+Parse patient vitals and symptoms
+
+Auto-fill the form if possible
+
+2️⃣ AI Risk Classification Engine
+
+Backend must:
+
+Use XGBoost model
+
+Accept structured patient input
+
+Output:
+
+Risk Level (Low / Medium / High)
+
+Probability Score
+
+Support 3-class classification
+
+Handle 25,000 synthetic training records
+
+Include:
+
+Data preprocessing
+
+One-hot encoding
+
+Missing value handling
+
+Train/test split
+
+Accuracy, Precision, Recall, F1-score
+
+3️⃣ Department Recommendation Engine (Hybrid Logic)
+
+If Risk = High → Emergency
+If chest pain → Cardiology
+If neurological symptoms → Neurology
+If breathing issue → Pulmonology
+Else → General Medicine
+
+Make mapping configurable.
+
+4️⃣ Explainability Layer
+
+Integrate SHAP.
+
+Display:
+
+Top contributing factors
+
+Feature importance chart
+
+Confidence %
+
+Human-readable explanation summary
+
+Example:
+“High risk due to elevated BP and chest pain.”
+
+5️⃣ Dashboard
+
+Create professional medical dashboard with:
+
+Risk Level Card (color coded)
+
+Confidence score
+
+Recommended Department
+
+SHAP visualization
+
+Risk distribution chart
+
+Model performance metrics
+
+Patient history table
+
+Use:
+
+React frontend
+
+Tailwind CSS
+
+FastAPI backend
+
+Chart.js or Recharts
+
+6️⃣ Emergency Button
+
+Add persistent red “🚨 Emergency” button on all pages.
+
+If clicked:
+
+Immediately assign Emergency department
+
+Override risk classification
+
+Log event
+
+🔹 Synthetic Data Generation
+
+Generate 25,000 realistic synthetic patient records including:
+
+Correlated vitals
+
+Logical symptom-risk relationships
+
+Balanced class distribution
+
+Document:
+
+Schema
+
+Risk assignment logic
+
+Data generation strategy
+
+🔹 Architecture Requirements
+
+Generate:
+
+System architecture diagram
+
+Data flow diagram
+
+ML pipeline diagram
+
+Folder structure
+
+🔹 Output API Format
+
+Return prediction as:
+
+{
+"risk_level": "High",
+"confidence_score": 0.87,
+"recommended_department": "Cardiology",
+"explanation": [
+"High systolic blood pressure",
+"Chest pain symptom",
+"History of hypertension"
+]
+}
+
+🔹 Technical Stack
+
+Frontend:
+React + Tailwind
+
+Backend:
+FastAPI
+
+ML:
+XGBoost + SHAP + Scikit-learn
+
+Database:
+PostgreSQL or MongoDB
+
+🔹 Additional Requirements
+
+Clean modular code
+
+Scalable architecture
+
+Hackathon-ready
+
+Production-style folder structure
+
+Proper README documentation
+
+5-minute demo explanation script
+
+Act as a senior AI architect and generate production-ready, well-commented, scalable code.
