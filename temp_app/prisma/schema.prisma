@@ -1,0 +1,97 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  PATIENT
+  DOCTOR
+  ADMIN
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  password      String?
+  role          Role      @default(PATIENT)
+  image         String?
+  emailVerified DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  triageRecords  TriageRecord[]
+  medicalRecords MedicalRecord[]
+  sosAlerts      SOSAlert[]
+  patientProfile PatientProfile?
+  doctorProfile  DoctorProfile?
+}
+
+model MedicalRecord {
+  id        String   @id @default(cuid())
+  patientId String
+  patient   User     @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  fileName  String
+  fileType  String   // "text/plain", "application/pdf" (simulated)
+  content   String   // Extracted text content
+  summary   String?  // AI generated summary
+  createdAt DateTime @default(now())
+}
+
+model SOSAlert {
+  id          String   @id @default(cuid())
+  patientId   String
+  patient     User     @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  status      String   @default("ACTIVE") // ACTIVE, RESOLVED
+  latitude    Float?
+  longitude   Float?
+  resolvedAt  DateTime?
+  createdAt   DateTime @default(now())
+}
+
+model PatientProfile {
+  id             String    @id @default(cuid())
+  userId         String    @unique
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  dob            DateTime?
+  gender         String?
+  bloodGroup     String?
+  address        String?
+  medicalHistory String?
+}
+
+model DoctorProfile {
+  id                String  @id @default(cuid())
+  userId            String  @unique
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  specialization    String?
+  licenseNumber     String?
+  yearsOfExperience Int?
+  hospital          String?
+}
+
+model TriageRecord {
+  id              String  @id @default(cuid())
+  patientId       String
+  patient         User    @relation(fields: [patientId], references: [id])
+  symptoms        String
+  riskLevel       String // LOW, MEDIUM, HIGH
+  recommendedDept String
+  aiReasoning     String?
+  vitals          String? // JSON string for BP, HR, etc.
+  createdAt       String // Storing as string for simplicity in hackathon, can be DateTime
+}
+
+model Department {
+  id           String @id @default(cuid())
+  name         String @unique
+  doctorCount  Int    @default(0)
+  patientCount Int    @default(0)
+}

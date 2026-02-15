@@ -1,0 +1,99 @@
+{
+    "common": {
+        "appName": "Nalan",
+        "welcome": "Welcome",
+        "login": "Login",
+        "logout": "Logout",
+        "register": "Register",
+        "email": "Email",
+        "password": "Password",
+        "name": "Name",
+        "submit": "Submit",
+        "cancel": "Cancel",
+        "save": "Save",
+        "edit": "Edit",
+        "delete": "Delete",
+        "profile": "Profile",
+        "dashboard": "Dashboard",
+        "history": "History"
+    },
+    "homepage": {
+        "title": "Nalan AI",
+        "titleHighlight": "Smart Patient Triage System",
+        "subtitle": "AI-powered patient triage system for rapid assessment, risk prioritization, and seamless healthcare management.",
+        "patientCard": {
+            "title": "I am a Patient",
+            "description": "Get an instant AI assessment and risk analysis.",
+            "button": "Enter as Patient"
+        },
+        "doctorCard": {
+            "title": "I am a Doctor",
+            "description": "View prioritized patient queue and AI insights.",
+            "button": "Doctor Portal"
+        },
+        "adminCard": {
+            "title": "Admin",
+            "description": "Monitor system status and analytics.",
+            "button": "Admin Console"
+        }
+    },
+    "patient": {
+        "title": "Nalan Triage",
+        "newTriage": "New Triage",
+        "viewHistory": "View History",
+        "chatbot": "Nalan Assistant"
+    },
+    "doctor": {
+        "title": "Nalan Doctor Portal",
+        "patientQueue": "Patient Queue"
+    },
+    "admin": {
+        "title": "Nalan Admin",
+        "overview": "Overview",
+        "settings": "Settings"
+    },
+    "triage": {
+        "symptoms": "Symptoms",
+        "describeSymptoms": "Describe your symptoms",
+        "painLevel": "Pain Level",
+        "duration": "Duration",
+        "temperature": "Temperature",
+        "heartRate": "Heart Rate",
+        "bloodPressure": "Blood Pressure",
+        "riskLevel": "Risk Level",
+        "department": "Department",
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low",
+        "submit": "Submit Triage",
+        "chatTitle": "AI Symptom Triage",
+        "chatSubtitle": "Smart assessment for immediate health guidance.",
+        "welcome": "Hello! I'm your health triage assistant. Please select your symptoms below or describe how you feel.",
+        "placeholder": "Describe other symptoms or details here...",
+        "placeholderDetails": "Enter medications, history, or other details...",
+        "analyzing": "Analyzing symptoms...",
+        "highRisk": "I see some concerning symptoms. To analyze this accurately, I need more detail. Please list any medications you're taking and your medical history.",
+        "success": "I have logged this assessment to your records. You can view your history in the dashboard.",
+        "backToDashboard": "Back to Dashboard",
+        "error": "I'm sorry, I encountered an error. Please try again.",
+        "disclaimerTitle": "Medical Disclaimer",
+        "disclaimerText": "This AI assessment is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Call emergency services immediately if you are experiencing a life-threatening situation."
+    },
+    "auth": {
+        "loginTitle": "Login to Nalan",
+        "registerTitle": "Create Account",
+        "emailPlaceholder": "Enter your email",
+        "passwordPlaceholder": "Enter your password",
+        "namePlaceholder": "Enter your name",
+        "noAccount": "Don't have an account?",
+        "hasAccount": "Already have an account?",
+        "signUp": "Sign up",
+        "signIn": "Sign in"
+    },
+    "chatbot": {
+        "title": "Nalan Assistant",
+        "placeholder": "Describe your symptoms...",
+        "send": "Send",
+        "greeting": "Hello! I'm Nalan Assistant. How can I help you today?"
+    }
+}
